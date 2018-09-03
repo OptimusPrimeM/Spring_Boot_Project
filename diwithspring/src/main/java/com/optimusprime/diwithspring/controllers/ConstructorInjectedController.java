@@ -1,15 +1,15 @@
 package com.optimusprime.diwithspring.controllers;
 
-import com.optimusprime.diwithspring.services.GreetingServiceImpl;
+import com.optimusprime.diwithspring.services.GreetingService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class ConstructorInjectedController {
 
-    private GreetingServiceImpl greetingService;
+    private GreetingService greetingService;
 
-
-    public ConstructorInjectedController(GreetingServiceImpl greetingService) {
+    public ConstructorInjectedController(@Qualifier("constructorGreetingServiceImpl") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
