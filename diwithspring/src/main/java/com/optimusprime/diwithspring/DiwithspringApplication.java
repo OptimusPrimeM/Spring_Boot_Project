@@ -18,7 +18,7 @@ public class DiwithspringApplication {
 //		System.out.println("Property based = "+applicationContext.getBean(PropertyInjectedController.class).sayHello());
 //
 //
-		System.out.println("Setter based = "+applicationContext.getBean(PropertyInjectedController.class).sayHello());
+		System.out.println(applicationContext.getBean(PropertyInjectedController.class).sayHello());
 //		System.out.println("Setter based = "+applicationContext.getBean(SetterInjectedController.class).sayHello());
 //
 //		System.out.println("Constructor based = "+applicationContext.getBean(ConstructorInjectedController.class).sayHello());
