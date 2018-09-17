@@ -1,6 +1,6 @@
 package com.optimusprime.diwithspring;
 
-import com.optimusprime.diwithspring.controllers.PropertyInjectedController;
+import com.optimusprime.diwithspring.examplebeans.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -18,7 +18,7 @@ public class DiwithspringApplication {
 //		System.out.println("Property based = "+applicationContext.getBean(PropertyInjectedController.class).sayHello());
 //
 //
-		System.out.println(applicationContext.getBean(PropertyInjectedController.class).sayHello());
+//		System.out.println(applicationContext.getBean(PropertyInjectedController.class).sayHello());
 //		System.out.println("Setter based = "+applicationContext.getBean(SetterInjectedController.class).sayHello());
 //
 //		System.out.println("Constructor based = "+applicationContext.getBean(ConstructorInjectedController.class).sayHello());
@@ -27,6 +27,12 @@ public class DiwithspringApplication {
 
 //		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController)applicationContext.getBean("constructorInjectedController");
 //		constructorInjectedController.sayHello();
+
+		FakeDataSource fakeDataSource = applicationContext.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUrl());
+		System.out.println(fakeDataSource.getPassword());
+		System.out.println(fakeDataSource.getUser());
+
 
 	}
 }
