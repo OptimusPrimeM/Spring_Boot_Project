@@ -1,0 +1,32 @@
+#this is a comment
+
+name: optimus
+
+names: #mycomment
+  - John
+  - Mike
+  - Ringo
+
+pound_sign: "#"
+
+book:
+  author: Joe Buck
+  publisher: random home
+
+truth:  yes
+
+another_truth: True
+
+more_tree:  true
+
+sring_val:  "This is a' String"
+
+string_with_new_lines: |
+  dsada adssad
+  asdsad asdsad
+  dsadsad dsadsa
+
+string_without_new_lines: >
+  dsdd dsad
+  dsd dsad
+  dsad dssd
