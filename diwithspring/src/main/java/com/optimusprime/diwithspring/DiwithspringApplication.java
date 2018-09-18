@@ -1,6 +1,7 @@
 package com.optimusprime.diwithspring;
 
 import com.optimusprime.diwithspring.examplebeans.FakeDataSource;
+import com.optimusprime.diwithspring.examplebeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -32,6 +33,13 @@ public class DiwithspringApplication {
 		System.out.println(fakeDataSource.getUrl());
 		System.out.println(fakeDataSource.getPassword());
 		System.out.println(fakeDataSource.getUser());
+
+
+		System.out.println("======================");
+		FakeJmsBroker fakeJmsBroker = applicationContext.getBean(FakeJmsBroker.class);
+		System.out.println(fakeJmsBroker.getUrl());
+		System.out.println(fakeJmsBroker.getPassword());
+		System.out.println(fakeJmsBroker.getUser());
 
 
 	}
