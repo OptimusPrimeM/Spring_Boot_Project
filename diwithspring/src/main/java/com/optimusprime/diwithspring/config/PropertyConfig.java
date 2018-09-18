@@ -2,25 +2,20 @@ package com.optimusprime.diwithspring.config;
 
 import com.optimusprime.diwithspring.examplebeans.FakeDataSource;
 import com.optimusprime.diwithspring.examplebeans.FakeJmsBroker;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.PropertySources;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.env.Environment;
 
 @Configuration
 //@PropertySource({"classpath:datasource.properties","classpath:jms.properties"})
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
+//@PropertySources({
+//        @PropertySource("classpath:datasource.properties"),
+//        @PropertySource("classpath:jms.properties")
+//})
 public class PropertyConfig {
 
-    @Autowired
-    Environment environment;
+//    @Autowired
+//    Environment environment;
 
     @Value("${optimus.username}")
     String userName;
@@ -44,7 +39,7 @@ public class PropertyConfig {
     @Bean
     public FakeDataSource fakeDataSource(){
         FakeDataSource fakeDataSource= new FakeDataSource();
-        fakeDataSource.setUser(environment.getProperty("USERNAME"));
+        fakeDataSource.setUser(this.userName);
         fakeDataSource.setPassword(this.password);
         fakeDataSource.setUrl(this.url);
 
@@ -60,9 +55,11 @@ public class PropertyConfig {
 
         return fakeJmsBroker;
     }
-
+/*
     @Bean
     public static PropertySourcesPlaceholderConfigurer properties() {
         return new PropertySourcesPlaceholderConfigurer();
     }
+
+ */
 }
