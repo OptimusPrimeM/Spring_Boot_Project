@@ -1,0 +1,12 @@
+optimus:
+  username: Optimus
+  password: prime
+  url: kjadajhdiuhd
+
+---
+spring:
+  profiles: en
+optimus:
+  password: prim
+
+
